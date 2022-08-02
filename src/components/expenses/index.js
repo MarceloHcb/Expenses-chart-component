@@ -6,6 +6,16 @@ export const Expenses = () => {
 
 const [display, setDisplay] = useState("none")
 
+
+function handleDisplay(){
+  if(display==="none"){
+    setDisplay("flex")
+   }
+ if(display==="flex"){
+  setDisplay("none")
+ }
+
+}
   const fields = [
     {
       valor: "40px",
@@ -76,7 +86,7 @@ const [display, setDisplay] = useState("none")
             
               return (
                 <>                  
-                 <div className="boxes" onMouseOver={()=>setDisplay("flex")}  key={index}>
+                 <div className="boxes" onMouseOver={handleDisplay}  key={index}>
                   <Amount display={display}  >
                  <h5>{field.amount} </h5> 
                   </Amount>
@@ -125,6 +135,7 @@ const Div = styled("div")`
   width:2.5rem;  
   border-radius:5px;
   cursor: pointer; 
+  transition:ease-in-out all 5s;
 `
 const HR = styled("hr")`
   background-color:hsl(28, 10%, 53%);
