@@ -76,11 +76,11 @@ const [display, setDisplay] = useState("none")
             
               return (
                 <>                  
-                 <div className="boxes" key={index}>
+                 <div className="boxes" onMouseOver={()=>setDisplay("flex")}  key={index}>
                   <Amount display={display}  >
                  <h5>{field.amount} </h5> 
                   </Amount>
-                   <Div key={index} height={field.valor} onChange={()=>setDisplay("flex")} color={field.color}> </Div>
+                   <Div key={index} height={field.valor}  color={field.color}> </Div>
                  <p>{field.text}</p>    
                    
                     </div>
